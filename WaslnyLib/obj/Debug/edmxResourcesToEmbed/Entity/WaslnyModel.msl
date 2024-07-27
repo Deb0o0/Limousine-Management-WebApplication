@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WaslnyModelStoreContainer" CdmEntityContainer="WaslnyLibDbContext">
+    <EntitySetMapping Name="Actions">
+      <EntityTypeMapping TypeName="WaslnyModel.Action">
+        <MappingFragment StoreEntitySet="Action">
+          <ScalarProperty Name="ActionID" ColumnName="ActionID" />
+          <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActionTypes">
+      <EntityTypeMapping TypeName="WaslnyModel.ActionType">
+        <MappingFragment StoreEntitySet="ActionType">
+          <ScalarProperty Name="ActionTypeID" ColumnName="ActionTypeID" />
+          <ScalarProperty Name="ActionTypeName" ColumnName="ActionTypeName" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditTrials">
+      <EntityTypeMapping TypeName="WaslnyModel.AuditTrial">
+        <MappingFragment StoreEntitySet="AuditTrial">
+          <ScalarProperty Name="AuditTrialID" ColumnName="AuditTrialID" />
+          <ScalarProperty Name="ActionTypeID" ColumnName="ActionTypeID" />
+          <ScalarProperty Name="ActionID" ColumnName="ActionID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="TransactionTime" ColumnName="TransactionTime" />
+          <ScalarProperty Name="EntityID" ColumnName="EntityID" />
+          <ScalarProperty Name="EntityRecord" ColumnName="EntityRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cars">
+      <EntityTypeMapping TypeName="WaslnyModel.Car">
+        <MappingFragment StoreEntitySet="Car">
+          <ScalarProperty Name="CarID" ColumnName="CarID" />
+          <ScalarProperty Name="CarColor" ColumnName="CarColor" />
+          <ScalarProperty Name="CarBrand" ColumnName="CarBrand" />
+          <ScalarProperty Name="CarModel" ColumnName="CarModel" />
+          <ScalarProperty Name="CarVersion" ColumnName="CarVersion" />
+          <ScalarProperty Name="CarType" ColumnName="CarType" />
+          <ScalarProperty Name="CarCapacity" ColumnName="CarCapacity" />
+          <ScalarProperty Name="CarPN" ColumnName="CarPN" />
+          <ScalarProperty Name="CarLED" ColumnName="CarLED" />
+          <ScalarProperty Name="CarRented" ColumnName="CarRented" />
+          <ScalarProperty Name="CarKMDashboard" ColumnName="CarKMDashboard" />
+          <ScalarProperty Name="CarPhoto" ColumnName="CarPhoto" />
+          <ScalarProperty Name="CarIsAvailable" ColumnName="CarIsAvailable" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarClassifications">
+      <EntityTypeMapping TypeName="WaslnyModel.CarClassification">
+        <MappingFragment StoreEntitySet="CarClassification">
+          <ScalarProperty Name="CarClassificationID" ColumnName="CarClassificationID" />
+          <ScalarProperty Name="CarID" ColumnName="CarID" />
+          <ScalarProperty Name="CarClassificationQuality" ColumnName="CarClassificationQuality" />
+          <ScalarProperty Name="CarClassificationType" ColumnName="CarClassificationType" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarMaintenances">
+      <EntityTypeMapping TypeName="WaslnyModel.CarMaintenance">
+        <MappingFragment StoreEntitySet="CarMaintenance">
+          <ScalarProperty Name="CarMaintenanceID" ColumnName="CarMaintenanceID" />
+          <ScalarProperty Name="CarID" ColumnName="CarID" />
+          <ScalarProperty Name="CarMaintenanceDate" ColumnName="CarMaintenanceDate" />
+          <ScalarProperty Name="CarMaintenanceDetails" ColumnName="CarMaintenanceDetails" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="WaslnyModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerFName" ColumnName="CustomerFName" />
+          <ScalarProperty Name="CustomerLName" ColumnName="CustomerLName" />
+          <ScalarProperty Name="CustomerGender" ColumnName="CustomerGender" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
+          <ScalarProperty Name="CustomerCity" ColumnName="CustomerCity" />
+          <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CustomerDOB" ColumnName="CustomerDOB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drivers">
+      <EntityTypeMapping TypeName="WaslnyModel.Driver">
+        <MappingFragment StoreEntitySet="Driver">
+          <ScalarProperty Name="DriverID" ColumnName="DriverID" />
+          <ScalarProperty Name="DriverFName" ColumnName="DriverFName" />
+          <ScalarProperty Name="DriverLName" ColumnName="DriverLName" />
+          <ScalarProperty Name="DriverPhone" ColumnName="DriverPhone" />
+          <ScalarProperty Name="DriverSSN" ColumnName="DriverSSN" />
+          <ScalarProperty Name="DriverSalary" ColumnName="DriverSalary" />
+          <ScalarProperty Name="DriverDOB" ColumnName="DriverDOB" />
+          <ScalarProperty Name="DriverAddress" ColumnName="DriverAddress" />
+          <ScalarProperty Name="DriverPhoto" ColumnName="DriverPhoto" />
+          <ScalarProperty Name="DriverCity" ColumnName="DriverCity" />
+          <ScalarProperty Name="DriverLED" ColumnName="DriverLED" />
+          <ScalarProperty Name="DriverLastTripDT" ColumnName="DriverLastTripDT" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterEntities">
+      <EntityTypeMapping TypeName="WaslnyModel.MasterEntity">
+        <MappingFragment StoreEntitySet="MasterEntity">
+          <ScalarProperty Name="EntityID" ColumnName="EntityID" />
+          <ScalarProperty Name="EntityName" ColumnName="EntityName" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prices">
+      <EntityTypeMapping TypeName="WaslnyModel.Price">
+        <MappingFragment StoreEntitySet="Price">
+          <ScalarProperty Name="PriceID" ColumnName="PriceID" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="CarClassificationID" ColumnName="CarClassificationID" />
+          <ScalarProperty Name="PriceMoney" ColumnName="PriceMoney" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Routes">
+      <EntityTypeMapping TypeName="WaslnyModel.Route">
+        <MappingFragment StoreEntitySet="Route">
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="RouteTo" ColumnName="RouteTo" />
+          <ScalarProperty Name="RouteFrom" ColumnName="RouteFrom" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trips">
+      <EntityTypeMapping TypeName="WaslnyModel.Trip">
+        <MappingFragment StoreEntitySet="Trip">
+          <ScalarProperty Name="TripID" ColumnName="TripID" />
+          <ScalarProperty Name="TripBookingDT" ColumnName="TripBookingDT" />
+          <ScalarProperty Name="TripRealTravelDT" ColumnName="TripRealTravelDT" />
+          <ScalarProperty Name="TripPredictedTravelDT" ColumnName="TripPredictedTravelDT" />
+          <ScalarProperty Name="TripArrivalDT" ColumnName="TripArrivalDT" />
+          <ScalarProperty Name="TripStartKM" ColumnName="TripStartKM" />
+          <ScalarProperty Name="TripEndKM" ColumnName="TripEndKM" />
+          <ScalarProperty Name="TripPassengers" ColumnName="TripPassengers" />
+          <ScalarProperty Name="TripStatus" ColumnName="TripStatus" />
+          <ScalarProperty Name="TripDriverRating" ColumnName="TripDriverRating" />
+          <ScalarProperty Name="TripCarRating" ColumnName="TripCarRating" />
+          <ScalarProperty Name="TripComments" ColumnName="TripComments" />
+          <ScalarProperty Name="DriverID" ColumnName="DriverID" />
+          <ScalarProperty Name="CarID" ColumnName="CarID" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditDetailsViews">
+      <EntityTypeMapping TypeName="WaslnyModel.AuditDetailsView">
+        <MappingFragment StoreEntitySet="AuditDetailsView">
+          <ScalarProperty Name="EntityRecord" ColumnName="EntityRecord" />
+          <ScalarProperty Name="TransactionTime" ColumnName="TransactionTime" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+          <ScalarProperty Name="ActionID" ColumnName="ActionID" />
+          <ScalarProperty Name="ActionTypeName" ColumnName="ActionTypeName" />
+          <ScalarProperty Name="ActionTypeID" ColumnName="ActionTypeID" />
+          <ScalarProperty Name="EntityName" ColumnName="EntityName" />
+          <ScalarProperty Name="EntityID" ColumnName="EntityID" />
+          <ScalarProperty Name="AuditTrialID" ColumnName="AuditTrialID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarsEvaluations">
+      <EntityTypeMapping TypeName="WaslnyModel.CarsEvaluation">
+        <MappingFragment StoreEntitySet="CarsEvaluation">
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="TripDriverRating" ColumnName="TripDriverRating" />
+          <ScalarProperty Name="TripStatus" ColumnName="TripStatus" />
+          <ScalarProperty Name="TripPassengers" ColumnName="TripPassengers" />
+          <ScalarProperty Name="TripEndKM" ColumnName="TripEndKM" />
+          <ScalarProperty Name="TripStartKM" ColumnName="TripStartKM" />
+          <ScalarProperty Name="TripArrivalDT" ColumnName="TripArrivalDT" />
+          <ScalarProperty Name="TripRealTravelDT" ColumnName="TripRealTravelDT" />
+          <ScalarProperty Name="TripBookingDT" ColumnName="TripBookingDT" />
+          <ScalarProperty Name="TripID" ColumnName="TripID" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="CarClassificationID" ColumnName="CarClassificationID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CarIsAvailable" ColumnName="CarIsAvailable" />
+          <ScalarProperty Name="CarPhoto" ColumnName="CarPhoto" />
+          <ScalarProperty Name="CarKMDashboard" ColumnName="CarKMDashboard" />
+          <ScalarProperty Name="CarRented" ColumnName="CarRented" />
+          <ScalarProperty Name="CarLED" ColumnName="CarLED" />
+          <ScalarProperty Name="CarID" ColumnName="CarID" />
+          <ScalarProperty Name="CarColor" ColumnName="CarColor" />
+          <ScalarProperty Name="CarCapacity" ColumnName="CarCapacity" />
+          <ScalarProperty Name="CarType" ColumnName="CarType" />
+          <ScalarProperty Name="TripComments" ColumnName="TripComments" />
+          <ScalarProperty Name="TripCarRating" ColumnName="TripCarRating" />
+          <ScalarProperty Name="TripPredictedTravelDT" ColumnName="TripPredictedTravelDT" />
+          <ScalarProperty Name="RouteTo" ColumnName="RouteTo" />
+          <ScalarProperty Name="CarClassificationType" ColumnName="CarClassificationType" />
+          <ScalarProperty Name="CarClassificationQuality" ColumnName="CarClassificationQuality" />
+          <ScalarProperty Name="CarPN" ColumnName="CarPN" />
+          <ScalarProperty Name="CarVersion" ColumnName="CarVersion" />
+          <ScalarProperty Name="CarModel" ColumnName="CarModel" />
+          <ScalarProperty Name="CarBrand" ColumnName="CarBrand" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DriversEvaluations">
+      <EntityTypeMapping TypeName="WaslnyModel.DriversEvaluation">
+        <MappingFragment StoreEntitySet="DriversEvaluation">
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="TripCarRating" ColumnName="TripCarRating" />
+          <ScalarProperty Name="TripStatus" ColumnName="TripStatus" />
+          <ScalarProperty Name="TripPassengers" ColumnName="TripPassengers" />
+          <ScalarProperty Name="TripEndKM" ColumnName="TripEndKM" />
+          <ScalarProperty Name="TripStartKM" ColumnName="TripStartKM" />
+          <ScalarProperty Name="TripArrivalDT" ColumnName="TripArrivalDT" />
+          <ScalarProperty Name="TripRealTravelDT" ColumnName="TripRealTravelDT" />
+          <ScalarProperty Name="TripBookingDT" ColumnName="TripBookingDT" />
+          <ScalarProperty Name="TripID" ColumnName="TripID" />
+          <ScalarProperty Name="DriverID" ColumnName="DriverID" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DriverLastTripDT" ColumnName="DriverLastTripDT" />
+          <ScalarProperty Name="DriverCity" ColumnName="DriverCity" />
+          <ScalarProperty Name="DriverPhoto" ColumnName="DriverPhoto" />
+          <ScalarProperty Name="DriverAddress" ColumnName="DriverAddress" />
+          <ScalarProperty Name="DriverDOB" ColumnName="DriverDOB" />
+          <ScalarProperty Name="DriverSalary" ColumnName="DriverSalary" />
+          <ScalarProperty Name="DriverSSN" ColumnName="DriverSSN" />
+          <ScalarProperty Name="TripComments" ColumnName="TripComments" />
+          <ScalarProperty Name="TripDriverRating" ColumnName="TripDriverRating" />
+          <ScalarProperty Name="TripPredictedTravelDT" ColumnName="TripPredictedTravelDT" />
+          <ScalarProperty Name="RouteTo" ColumnName="RouteTo" />
+          <ScalarProperty Name="DriverLED" ColumnName="DriverLED" />
+          <ScalarProperty Name="DriverPhone" ColumnName="DriverPhone" />
+          <ScalarProperty Name="DriverLName" ColumnName="DriverLName" />
+          <ScalarProperty Name="DriverFName" ColumnName="DriverFName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TripDetails">
+      <EntityTypeMapping TypeName="WaslnyModel.TripDetail">
+        <MappingFragment StoreEntitySet="TripDetails">
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="PriceID" ColumnName="PriceID" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="CarClassificationID" ColumnName="CarClassificationID" />
+          <ScalarProperty Name="TripID" ColumnName="TripID" />
+          <ScalarProperty Name="TripDriverRating" ColumnName="TripDriverRating" />
+          <ScalarProperty Name="TripCarRating" ColumnName="TripCarRating" />
+          <ScalarProperty Name="TripComments" ColumnName="TripComments" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TripPassengers" ColumnName="TripPassengers" />
+          <ScalarProperty Name="CarClassificationType" ColumnName="CarClassificationType" />
+          <ScalarProperty Name="CarClassificationQuality" ColumnName="CarClassificationQuality" />
+          <ScalarProperty Name="PriceMoney" ColumnName="PriceMoney" />
+          <ScalarProperty Name="RouteTo" ColumnName="RouteTo" />
+          <ScalarProperty Name="TripArrivalDT" ColumnName="TripArrivalDT" />
+          <ScalarProperty Name="TripRealTravelDT" ColumnName="TripRealTravelDT" />
+          <ScalarProperty Name="TripStatus" ColumnName="TripStatus" />
+          <ScalarProperty Name="TripBookingDT" ColumnName="TripBookingDT" />
+          <ScalarProperty Name="TripEndKM" ColumnName="TripEndKM" />
+          <ScalarProperty Name="TripStartKM" ColumnName="TripStartKM" />
+          <ScalarProperty Name="TripPredictedTravelDT" ColumnName="TripPredictedTravelDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

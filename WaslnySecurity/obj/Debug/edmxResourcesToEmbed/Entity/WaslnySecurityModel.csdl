@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WaslnyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="webpages_UserPermissions" Relationship="Self.FK_webpages_UserPermissions_Users" FromRole="Users" ToRole="webpages_UserPermissions" />
+    <NavigationProperty Name="webpages_Roles" Relationship="Self.webpages_UsersInRoles" FromRole="Users" ToRole="webpages_Roles" />
+  </EntityType>
+  <EntityType Name="webpages_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="ConfirmationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsConfirmed" Type="Boolean" />
+    <Property Name="LastPasswordFailureDate" Type="DateTime" Precision="3" />
+    <Property Name="PasswordFailuresSinceLastSuccess" Type="Int32" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PasswordChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="PasswordSalt" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PasswordVerificationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordVerificationTokenExpirationDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="webpages_OAuthMembership">
+    <Key>
+      <PropertyRef Name="Provider" />
+      <PropertyRef Name="ProviderUserId" />
+    </Key>
+    <Property Name="Provider" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderUserId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="webpages_Pages">
+    <Key>
+      <PropertyRef Name="PageId" />
+    </Key>
+    <Property Name="PageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PageName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PageTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RelatedTo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="webpages_UserPermissions" Relationship="Self.FK_webpages_UserPermissions_webpages_Pages" FromRole="webpages_Pages" ToRole="webpages_UserPermissions" />
+  </EntityType>
+  <EntityType Name="webpages_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="webpages_UserPermissions">
+    <Key>
+      <PropertyRef Name="UserPageId" />
+    </Key>
+    <Property Name="UserPageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="PageId" Type="Int32" />
+    <Property Name="CanRead" Type="Boolean" />
+    <NavigationProperty Name="User" Relationship="Self.FK_webpages_UserPermissions_Users" FromRole="webpages_UserPermissions" ToRole="Users" />
+    <NavigationProperty Name="webpages_Pages" Relationship="Self.FK_webpages_UserPermissions_webpages_Pages" FromRole="webpages_UserPermissions" ToRole="webpages_Pages" />
+  </EntityType>
+  <Association Name="FK_webpages_UserPermissions_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="webpages_UserPermissions" Type="Self.webpages_UserPermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="webpages_UserPermissions">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_webpages_UserPermissions_webpages_Pages">
+    <End Role="webpages_Pages" Type="Self.webpages_Pages" Multiplicity="0..1" />
+    <End Role="webpages_UserPermissions" Type="Self.webpages_UserPermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="webpages_Pages">
+        <PropertyRef Name="PageId" />
+      </Principal>
+      <Dependent Role="webpages_UserPermissions">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="webpages_UsersInRoles">
+    <End Role="webpages_Roles" Type="Self.webpages_Roles" Multiplicity="*" />
+    <End Role="Users" Type="Self.User" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="WaslnySecurityDbContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="webpages_Membership" EntityType="Self.webpages_Membership" />
+    <EntitySet Name="webpages_OAuthMembership" EntityType="Self.webpages_OAuthMembership" />
+    <EntitySet Name="webpages_Pages" EntityType="Self.webpages_Pages" />
+    <EntitySet Name="webpages_Roles" EntityType="Self.webpages_Roles" />
+    <EntitySet Name="webpages_UserPermissions" EntityType="Self.webpages_UserPermissions" />
+    <AssociationSet Name="FK_webpages_UserPermissions_Users" Association="Self.FK_webpages_UserPermissions_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="webpages_UserPermissions" EntitySet="webpages_UserPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_webpages_UserPermissions_webpages_Pages" Association="Self.FK_webpages_UserPermissions_webpages_Pages">
+      <End Role="webpages_Pages" EntitySet="webpages_Pages" />
+      <End Role="webpages_UserPermissions" EntitySet="webpages_UserPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="webpages_UsersInRoles" Association="Self.webpages_UsersInRoles">
+      <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
